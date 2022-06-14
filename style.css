@@ -1,0 +1,2163 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+  margin: 1rem auto;
+  background: #2e2e33;
+}
+
+#display {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#display h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #b8b8cc;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.box, .s100-b100, .s100-b98, .s100-b95, .s100-b90, .s100-b85, .s100-b80, .s100-b75, .s100-b70, .s100-b65, .s100-b60, .s100-b55, .s100-b50, .s100-b45, .s100-b40, .s100-b35, .s100-b30, .s100-b25, .s100-b20, .s100-b15, .s100-b10, .s100-b5, .s100-b2, .s100-b0, .s98-b100, .s98-b98, .s98-b95, .s98-b90, .s98-b85, .s98-b80, .s98-b75, .s98-b70, .s98-b65, .s98-b60, .s98-b55, .s98-b50, .s98-b45, .s98-b40, .s98-b35, .s98-b30, .s98-b25, .s98-b20, .s98-b15, .s98-b10, .s98-b5, .s98-b2, .s98-b0, .s95-b100, .s95-b98, .s95-b95, .s95-b90, .s95-b85, .s95-b80, .s95-b75, .s95-b70, .s95-b65, .s95-b60, .s95-b55, .s95-b50, .s95-b45, .s95-b40, .s95-b35, .s95-b30, .s95-b25, .s95-b20, .s95-b15, .s95-b10, .s95-b5, .s95-b2, .s95-b0, .s90-b100, .s90-b98, .s90-b95, .s90-b90, .s90-b85, .s90-b80, .s90-b75, .s90-b70, .s90-b65, .s90-b60, .s90-b55, .s90-b50, .s90-b45, .s90-b40, .s90-b35, .s90-b30, .s90-b25, .s90-b20, .s90-b15, .s90-b10, .s90-b5, .s90-b2, .s90-b0, .s85-b100, .s85-b98, .s85-b95, .s85-b90, .s85-b85, .s85-b80, .s85-b75, .s85-b70, .s85-b65, .s85-b60, .s85-b55, .s85-b50, .s85-b45, .s85-b40, .s85-b35, .s85-b30, .s85-b25, .s85-b20, .s85-b15, .s85-b10, .s85-b5, .s85-b2, .s85-b0, .s80-b100, .s80-b98, .s80-b95, .s80-b90, .s80-b85, .s80-b80, .s80-b75, .s80-b70, .s80-b65, .s80-b60, .s80-b55, .s80-b50, .s80-b45, .s80-b40, .s80-b35, .s80-b30, .s80-b25, .s80-b20, .s80-b15, .s80-b10, .s80-b5, .s80-b2, .s80-b0, .s75-b100, .s75-b98, .s75-b95, .s75-b90, .s75-b85, .s75-b80, .s75-b75, .s75-b70, .s75-b65, .s75-b60, .s75-b55, .s75-b50, .s75-b45, .s75-b40, .s75-b35, .s75-b30, .s75-b25, .s75-b20, .s75-b15, .s75-b10, .s75-b5, .s75-b2, .s75-b0, .s70-b100, .s70-b98, .s70-b95, .s70-b90, .s70-b85, .s70-b80, .s70-b75, .s70-b70, .s70-b65, .s70-b60, .s70-b55, .s70-b50, .s70-b45, .s70-b40, .s70-b35, .s70-b30, .s70-b25, .s70-b20, .s70-b15, .s70-b10, .s70-b5, .s70-b2, .s70-b0, .s65-b100, .s65-b98, .s65-b95, .s65-b90, .s65-b85, .s65-b80, .s65-b75, .s65-b70, .s65-b65, .s65-b60, .s65-b55, .s65-b50, .s65-b45, .s65-b40, .s65-b35, .s65-b30, .s65-b25, .s65-b20, .s65-b15, .s65-b10, .s65-b5, .s65-b2, .s65-b0, .s60-b100, .s60-b98, .s60-b95, .s60-b90, .s60-b85, .s60-b80, .s60-b75, .s60-b70, .s60-b65, .s60-b60, .s60-b55, .s60-b50, .s60-b45, .s60-b40, .s60-b35, .s60-b30, .s60-b25, .s60-b20, .s60-b15, .s60-b10, .s60-b5, .s60-b2, .s60-b0, .s55-b100, .s55-b98, .s55-b95, .s55-b90, .s55-b85, .s55-b80, .s55-b75, .s55-b70, .s55-b65, .s55-b60, .s55-b55, .s55-b50, .s55-b45, .s55-b40, .s55-b35, .s55-b30, .s55-b25, .s55-b20, .s55-b15, .s55-b10, .s55-b5, .s55-b2, .s55-b0, .s50-b100, .s50-b98, .s50-b95, .s50-b90, .s50-b85, .s50-b80, .s50-b75, .s50-b70, .s50-b65, .s50-b60, .s50-b55, .s50-b50, .s50-b45, .s50-b40, .s50-b35, .s50-b30, .s50-b25, .s50-b20, .s50-b15, .s50-b10, .s50-b5, .s50-b2, .s50-b0, .s45-b100, .s45-b98, .s45-b95, .s45-b90, .s45-b85, .s45-b80, .s45-b75, .s45-b70, .s45-b65, .s45-b60, .s45-b55, .s45-b50, .s45-b45, .s45-b40, .s45-b35, .s45-b30, .s45-b25, .s45-b20, .s45-b15, .s45-b10, .s45-b5, .s45-b2, .s45-b0, .s40-b100, .s40-b98, .s40-b95, .s40-b90, .s40-b85, .s40-b80, .s40-b75, .s40-b70, .s40-b65, .s40-b60, .s40-b55, .s40-b50, .s40-b45, .s40-b40, .s40-b35, .s40-b30, .s40-b25, .s40-b20, .s40-b15, .s40-b10, .s40-b5, .s40-b2, .s40-b0, .s35-b100, .s35-b98, .s35-b95, .s35-b90, .s35-b85, .s35-b80, .s35-b75, .s35-b70, .s35-b65, .s35-b60, .s35-b55, .s35-b50, .s35-b45, .s35-b40, .s35-b35, .s35-b30, .s35-b25, .s35-b20, .s35-b15, .s35-b10, .s35-b5, .s35-b2, .s35-b0, .s30-b100, .s30-b98, .s30-b95, .s30-b90, .s30-b85, .s30-b80, .s30-b75, .s30-b70, .s30-b65, .s30-b60, .s30-b55, .s30-b50, .s30-b45, .s30-b40, .s30-b35, .s30-b30, .s30-b25, .s30-b20, .s30-b15, .s30-b10, .s30-b5, .s30-b2, .s30-b0, .s25-b100, .s25-b98, .s25-b95, .s25-b90, .s25-b85, .s25-b80, .s25-b75, .s25-b70, .s25-b65, .s25-b60, .s25-b55, .s25-b50, .s25-b45, .s25-b40, .s25-b35, .s25-b30, .s25-b25, .s25-b20, .s25-b15, .s25-b10, .s25-b5, .s25-b2, .s25-b0, .s20-b100, .s20-b98, .s20-b95, .s20-b90, .s20-b85, .s20-b80, .s20-b75, .s20-b70, .s20-b65, .s20-b60, .s20-b55, .s20-b50, .s20-b45, .s20-b40, .s20-b35, .s20-b30, .s20-b25, .s20-b20, .s20-b15, .s20-b10, .s20-b5, .s20-b2, .s20-b0, .s15-b100, .s15-b98, .s15-b95, .s15-b90, .s15-b85, .s15-b80, .s15-b75, .s15-b70, .s15-b65, .s15-b60, .s15-b55, .s15-b50, .s15-b45, .s15-b40, .s15-b35, .s15-b30, .s15-b25, .s15-b20, .s15-b15, .s15-b10, .s15-b5, .s15-b2, .s15-b0, .s10-b100, .s10-b98, .s10-b95, .s10-b90, .s10-b85, .s10-b80, .s10-b75, .s10-b70, .s10-b65, .s10-b60, .s10-b55, .s10-b50, .s10-b45, .s10-b40, .s10-b35, .s10-b30, .s10-b25, .s10-b20, .s10-b15, .s10-b10, .s10-b5, .s10-b2, .s10-b0, .s5-b100, .s5-b98, .s5-b95, .s5-b90, .s5-b85, .s5-b80, .s5-b75, .s5-b70, .s5-b65, .s5-b60, .s5-b55, .s5-b50, .s5-b45, .s5-b40, .s5-b35, .s5-b30, .s5-b25, .s5-b20, .s5-b15, .s5-b10, .s5-b5, .s5-b2, .s5-b0, .s2-b100, .s2-b98, .s2-b95, .s2-b90, .s2-b85, .s2-b80, .s2-b75, .s2-b70, .s2-b65, .s2-b60, .s2-b55, .s2-b50, .s2-b45, .s2-b40, .s2-b35, .s2-b30, .s2-b25, .s2-b20, .s2-b15, .s2-b10, .s2-b5, .s2-b2, .s2-b0, .s0-b100, .s0-b98, .s0-b95, .s0-b90, .s0-b85, .s0-b80, .s0-b75, .s0-b70, .s0-b65, .s0-b60, .s0-b55, .s0-b50, .s0-b45, .s0-b40, .s0-b35, .s0-b30, .s0-b25, .s0-b20, .s0-b15, .s0-b10, .s0-b5, .s0-b2, .s0-b0 {
+  width: 80px;
+  height: 80px;
+  border: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+}
+.box:hover, .s100-b100:hover, .s100-b98:hover, .s100-b95:hover, .s100-b90:hover, .s100-b85:hover, .s100-b80:hover, .s100-b75:hover, .s100-b70:hover, .s100-b65:hover, .s100-b60:hover, .s100-b55:hover, .s100-b50:hover, .s100-b45:hover, .s100-b40:hover, .s100-b35:hover, .s100-b30:hover, .s100-b25:hover, .s100-b20:hover, .s100-b15:hover, .s100-b10:hover, .s100-b5:hover, .s100-b2:hover, .s100-b0:hover, .s98-b100:hover, .s98-b98:hover, .s98-b95:hover, .s98-b90:hover, .s98-b85:hover, .s98-b80:hover, .s98-b75:hover, .s98-b70:hover, .s98-b65:hover, .s98-b60:hover, .s98-b55:hover, .s98-b50:hover, .s98-b45:hover, .s98-b40:hover, .s98-b35:hover, .s98-b30:hover, .s98-b25:hover, .s98-b20:hover, .s98-b15:hover, .s98-b10:hover, .s98-b5:hover, .s98-b2:hover, .s98-b0:hover, .s95-b100:hover, .s95-b98:hover, .s95-b95:hover, .s95-b90:hover, .s95-b85:hover, .s95-b80:hover, .s95-b75:hover, .s95-b70:hover, .s95-b65:hover, .s95-b60:hover, .s95-b55:hover, .s95-b50:hover, .s95-b45:hover, .s95-b40:hover, .s95-b35:hover, .s95-b30:hover, .s95-b25:hover, .s95-b20:hover, .s95-b15:hover, .s95-b10:hover, .s95-b5:hover, .s95-b2:hover, .s95-b0:hover, .s90-b100:hover, .s90-b98:hover, .s90-b95:hover, .s90-b90:hover, .s90-b85:hover, .s90-b80:hover, .s90-b75:hover, .s90-b70:hover, .s90-b65:hover, .s90-b60:hover, .s90-b55:hover, .s90-b50:hover, .s90-b45:hover, .s90-b40:hover, .s90-b35:hover, .s90-b30:hover, .s90-b25:hover, .s90-b20:hover, .s90-b15:hover, .s90-b10:hover, .s90-b5:hover, .s90-b2:hover, .s90-b0:hover, .s85-b100:hover, .s85-b98:hover, .s85-b95:hover, .s85-b90:hover, .s85-b85:hover, .s85-b80:hover, .s85-b75:hover, .s85-b70:hover, .s85-b65:hover, .s85-b60:hover, .s85-b55:hover, .s85-b50:hover, .s85-b45:hover, .s85-b40:hover, .s85-b35:hover, .s85-b30:hover, .s85-b25:hover, .s85-b20:hover, .s85-b15:hover, .s85-b10:hover, .s85-b5:hover, .s85-b2:hover, .s85-b0:hover, .s80-b100:hover, .s80-b98:hover, .s80-b95:hover, .s80-b90:hover, .s80-b85:hover, .s80-b80:hover, .s80-b75:hover, .s80-b70:hover, .s80-b65:hover, .s80-b60:hover, .s80-b55:hover, .s80-b50:hover, .s80-b45:hover, .s80-b40:hover, .s80-b35:hover, .s80-b30:hover, .s80-b25:hover, .s80-b20:hover, .s80-b15:hover, .s80-b10:hover, .s80-b5:hover, .s80-b2:hover, .s80-b0:hover, .s75-b100:hover, .s75-b98:hover, .s75-b95:hover, .s75-b90:hover, .s75-b85:hover, .s75-b80:hover, .s75-b75:hover, .s75-b70:hover, .s75-b65:hover, .s75-b60:hover, .s75-b55:hover, .s75-b50:hover, .s75-b45:hover, .s75-b40:hover, .s75-b35:hover, .s75-b30:hover, .s75-b25:hover, .s75-b20:hover, .s75-b15:hover, .s75-b10:hover, .s75-b5:hover, .s75-b2:hover, .s75-b0:hover, .s70-b100:hover, .s70-b98:hover, .s70-b95:hover, .s70-b90:hover, .s70-b85:hover, .s70-b80:hover, .s70-b75:hover, .s70-b70:hover, .s70-b65:hover, .s70-b60:hover, .s70-b55:hover, .s70-b50:hover, .s70-b45:hover, .s70-b40:hover, .s70-b35:hover, .s70-b30:hover, .s70-b25:hover, .s70-b20:hover, .s70-b15:hover, .s70-b10:hover, .s70-b5:hover, .s70-b2:hover, .s70-b0:hover, .s65-b100:hover, .s65-b98:hover, .s65-b95:hover, .s65-b90:hover, .s65-b85:hover, .s65-b80:hover, .s65-b75:hover, .s65-b70:hover, .s65-b65:hover, .s65-b60:hover, .s65-b55:hover, .s65-b50:hover, .s65-b45:hover, .s65-b40:hover, .s65-b35:hover, .s65-b30:hover, .s65-b25:hover, .s65-b20:hover, .s65-b15:hover, .s65-b10:hover, .s65-b5:hover, .s65-b2:hover, .s65-b0:hover, .s60-b100:hover, .s60-b98:hover, .s60-b95:hover, .s60-b90:hover, .s60-b85:hover, .s60-b80:hover, .s60-b75:hover, .s60-b70:hover, .s60-b65:hover, .s60-b60:hover, .s60-b55:hover, .s60-b50:hover, .s60-b45:hover, .s60-b40:hover, .s60-b35:hover, .s60-b30:hover, .s60-b25:hover, .s60-b20:hover, .s60-b15:hover, .s60-b10:hover, .s60-b5:hover, .s60-b2:hover, .s60-b0:hover, .s55-b100:hover, .s55-b98:hover, .s55-b95:hover, .s55-b90:hover, .s55-b85:hover, .s55-b80:hover, .s55-b75:hover, .s55-b70:hover, .s55-b65:hover, .s55-b60:hover, .s55-b55:hover, .s55-b50:hover, .s55-b45:hover, .s55-b40:hover, .s55-b35:hover, .s55-b30:hover, .s55-b25:hover, .s55-b20:hover, .s55-b15:hover, .s55-b10:hover, .s55-b5:hover, .s55-b2:hover, .s55-b0:hover, .s50-b100:hover, .s50-b98:hover, .s50-b95:hover, .s50-b90:hover, .s50-b85:hover, .s50-b80:hover, .s50-b75:hover, .s50-b70:hover, .s50-b65:hover, .s50-b60:hover, .s50-b55:hover, .s50-b50:hover, .s50-b45:hover, .s50-b40:hover, .s50-b35:hover, .s50-b30:hover, .s50-b25:hover, .s50-b20:hover, .s50-b15:hover, .s50-b10:hover, .s50-b5:hover, .s50-b2:hover, .s50-b0:hover, .s45-b100:hover, .s45-b98:hover, .s45-b95:hover, .s45-b90:hover, .s45-b85:hover, .s45-b80:hover, .s45-b75:hover, .s45-b70:hover, .s45-b65:hover, .s45-b60:hover, .s45-b55:hover, .s45-b50:hover, .s45-b45:hover, .s45-b40:hover, .s45-b35:hover, .s45-b30:hover, .s45-b25:hover, .s45-b20:hover, .s45-b15:hover, .s45-b10:hover, .s45-b5:hover, .s45-b2:hover, .s45-b0:hover, .s40-b100:hover, .s40-b98:hover, .s40-b95:hover, .s40-b90:hover, .s40-b85:hover, .s40-b80:hover, .s40-b75:hover, .s40-b70:hover, .s40-b65:hover, .s40-b60:hover, .s40-b55:hover, .s40-b50:hover, .s40-b45:hover, .s40-b40:hover, .s40-b35:hover, .s40-b30:hover, .s40-b25:hover, .s40-b20:hover, .s40-b15:hover, .s40-b10:hover, .s40-b5:hover, .s40-b2:hover, .s40-b0:hover, .s35-b100:hover, .s35-b98:hover, .s35-b95:hover, .s35-b90:hover, .s35-b85:hover, .s35-b80:hover, .s35-b75:hover, .s35-b70:hover, .s35-b65:hover, .s35-b60:hover, .s35-b55:hover, .s35-b50:hover, .s35-b45:hover, .s35-b40:hover, .s35-b35:hover, .s35-b30:hover, .s35-b25:hover, .s35-b20:hover, .s35-b15:hover, .s35-b10:hover, .s35-b5:hover, .s35-b2:hover, .s35-b0:hover, .s30-b100:hover, .s30-b98:hover, .s30-b95:hover, .s30-b90:hover, .s30-b85:hover, .s30-b80:hover, .s30-b75:hover, .s30-b70:hover, .s30-b65:hover, .s30-b60:hover, .s30-b55:hover, .s30-b50:hover, .s30-b45:hover, .s30-b40:hover, .s30-b35:hover, .s30-b30:hover, .s30-b25:hover, .s30-b20:hover, .s30-b15:hover, .s30-b10:hover, .s30-b5:hover, .s30-b2:hover, .s30-b0:hover, .s25-b100:hover, .s25-b98:hover, .s25-b95:hover, .s25-b90:hover, .s25-b85:hover, .s25-b80:hover, .s25-b75:hover, .s25-b70:hover, .s25-b65:hover, .s25-b60:hover, .s25-b55:hover, .s25-b50:hover, .s25-b45:hover, .s25-b40:hover, .s25-b35:hover, .s25-b30:hover, .s25-b25:hover, .s25-b20:hover, .s25-b15:hover, .s25-b10:hover, .s25-b5:hover, .s25-b2:hover, .s25-b0:hover, .s20-b100:hover, .s20-b98:hover, .s20-b95:hover, .s20-b90:hover, .s20-b85:hover, .s20-b80:hover, .s20-b75:hover, .s20-b70:hover, .s20-b65:hover, .s20-b60:hover, .s20-b55:hover, .s20-b50:hover, .s20-b45:hover, .s20-b40:hover, .s20-b35:hover, .s20-b30:hover, .s20-b25:hover, .s20-b20:hover, .s20-b15:hover, .s20-b10:hover, .s20-b5:hover, .s20-b2:hover, .s20-b0:hover, .s15-b100:hover, .s15-b98:hover, .s15-b95:hover, .s15-b90:hover, .s15-b85:hover, .s15-b80:hover, .s15-b75:hover, .s15-b70:hover, .s15-b65:hover, .s15-b60:hover, .s15-b55:hover, .s15-b50:hover, .s15-b45:hover, .s15-b40:hover, .s15-b35:hover, .s15-b30:hover, .s15-b25:hover, .s15-b20:hover, .s15-b15:hover, .s15-b10:hover, .s15-b5:hover, .s15-b2:hover, .s15-b0:hover, .s10-b100:hover, .s10-b98:hover, .s10-b95:hover, .s10-b90:hover, .s10-b85:hover, .s10-b80:hover, .s10-b75:hover, .s10-b70:hover, .s10-b65:hover, .s10-b60:hover, .s10-b55:hover, .s10-b50:hover, .s10-b45:hover, .s10-b40:hover, .s10-b35:hover, .s10-b30:hover, .s10-b25:hover, .s10-b20:hover, .s10-b15:hover, .s10-b10:hover, .s10-b5:hover, .s10-b2:hover, .s10-b0:hover, .s5-b100:hover, .s5-b98:hover, .s5-b95:hover, .s5-b90:hover, .s5-b85:hover, .s5-b80:hover, .s5-b75:hover, .s5-b70:hover, .s5-b65:hover, .s5-b60:hover, .s5-b55:hover, .s5-b50:hover, .s5-b45:hover, .s5-b40:hover, .s5-b35:hover, .s5-b30:hover, .s5-b25:hover, .s5-b20:hover, .s5-b15:hover, .s5-b10:hover, .s5-b5:hover, .s5-b2:hover, .s5-b0:hover, .s2-b100:hover, .s2-b98:hover, .s2-b95:hover, .s2-b90:hover, .s2-b85:hover, .s2-b80:hover, .s2-b75:hover, .s2-b70:hover, .s2-b65:hover, .s2-b60:hover, .s2-b55:hover, .s2-b50:hover, .s2-b45:hover, .s2-b40:hover, .s2-b35:hover, .s2-b30:hover, .s2-b25:hover, .s2-b20:hover, .s2-b15:hover, .s2-b10:hover, .s2-b5:hover, .s2-b2:hover, .s2-b0:hover, .s0-b100:hover, .s0-b98:hover, .s0-b95:hover, .s0-b90:hover, .s0-b85:hover, .s0-b80:hover, .s0-b75:hover, .s0-b70:hover, .s0-b65:hover, .s0-b60:hover, .s0-b55:hover, .s0-b50:hover, .s0-b45:hover, .s0-b40:hover, .s0-b35:hover, .s0-b30:hover, .s0-b25:hover, .s0-b20:hover, .s0-b15:hover, .s0-b10:hover, .s0-b5:hover, .s0-b2:hover, .s0-b0:hover {
+  border: 2px solid white;
+  color: white;
+  transform: scale(1.2);
+}
+
+.s0-b0 {
+  background: black;
+}
+
+.s0-b2 {
+  background: #050505;
+}
+
+.s0-b5 {
+  background: #0d0d0d;
+}
+
+.s0-b10 {
+  background: #1a1a1a;
+}
+
+.s0-b15 {
+  background: #262626;
+}
+
+.s0-b20 {
+  background: #333333;
+}
+
+.s0-b25 {
+  background: #404040;
+}
+
+.s0-b30 {
+  background: #4d4d4d;
+}
+
+.s0-b35 {
+  background: #595959;
+}
+
+.s0-b40 {
+  background: #666666;
+}
+
+.s0-b45 {
+  background: #737373;
+}
+
+.s0-b50 {
+  background: gray;
+}
+
+.s0-b55 {
+  background: #8c8c8c;
+}
+
+.s0-b60 {
+  background: #999999;
+}
+
+.s0-b65 {
+  background: #a6a6a6;
+}
+
+.s0-b70 {
+  background: #b3b3b3;
+}
+
+.s0-b75 {
+  background: #bfbfbf;
+}
+
+.s0-b80 {
+  background: #cccccc;
+}
+
+.s0-b85 {
+  background: #d9d9d9;
+}
+
+.s0-b90 {
+  background: #e6e6e6;
+}
+
+.s0-b95 {
+  background: #f2f2f2;
+}
+
+.s0-b98 {
+  background: #fafafa;
+}
+
+.s0-b100 {
+  background: white;
+}
+
+.s2-b0 {
+  background: black;
+}
+
+.s2-b2 {
+  background: #050505;
+}
+
+.s2-b5 {
+  background: #0c0c0d;
+}
+
+.s2-b10 {
+  background: #19191a;
+}
+
+.s2-b15 {
+  background: #252526;
+}
+
+.s2-b20 {
+  background: #323233;
+}
+
+.s2-b25 {
+  background: #3e3e40;
+}
+
+.s2-b30 {
+  background: #4b4b4d;
+}
+
+.s2-b35 {
+  background: #575759;
+}
+
+.s2-b40 {
+  background: #646466;
+}
+
+.s2-b45 {
+  background: #707073;
+}
+
+.s2-b50 {
+  background: #7d7d80;
+}
+
+.s2-b55 {
+  background: #89898c;
+}
+
+.s2-b60 {
+  background: #969699;
+}
+
+.s2-b65 {
+  background: #a2a2a6;
+}
+
+.s2-b70 {
+  background: #afafb3;
+}
+
+.s2-b75 {
+  background: #bbbbbf;
+}
+
+.s2-b80 {
+  background: #c8c8cc;
+}
+
+.s2-b85 {
+  background: #d4d4d9;
+}
+
+.s2-b90 {
+  background: #e1e1e6;
+}
+
+.s2-b95 {
+  background: #ededf2;
+}
+
+.s2-b98 {
+  background: #f5f5fa;
+}
+
+.s2-b100 {
+  background: #fafaff;
+}
+
+.s5-b0 {
+  background: black;
+}
+
+.s5-b2 {
+  background: #050505;
+}
+
+.s5-b5 {
+  background: #0c0c0d;
+}
+
+.s5-b10 {
+  background: #18181a;
+}
+
+.s5-b15 {
+  background: #242426;
+}
+
+.s5-b20 {
+  background: #303033;
+}
+
+.s5-b25 {
+  background: #3d3d40;
+}
+
+.s5-b30 {
+  background: #49494d;
+}
+
+.s5-b35 {
+  background: #555559;
+}
+
+.s5-b40 {
+  background: #616166;
+}
+
+.s5-b45 {
+  background: #6d6d73;
+}
+
+.s5-b50 {
+  background: #797980;
+}
+
+.s5-b55 {
+  background: #85858c;
+}
+
+.s5-b60 {
+  background: #919199;
+}
+
+.s5-b65 {
+  background: #9d9da6;
+}
+
+.s5-b70 {
+  background: #aaaab3;
+}
+
+.s5-b75 {
+  background: #b6b6bf;
+}
+
+.s5-b80 {
+  background: #c2c2cc;
+}
+
+.s5-b85 {
+  background: #ceced9;
+}
+
+.s5-b90 {
+  background: #dadae6;
+}
+
+.s5-b95 {
+  background: #e6e6f2;
+}
+
+.s5-b98 {
+  background: #ededfa;
+}
+
+.s5-b100 {
+  background: #f2f2ff;
+}
+
+.s10-b0 {
+  background: black;
+}
+
+.s10-b2 {
+  background: #050505;
+}
+
+.s10-b5 {
+  background: #0b0b0d;
+}
+
+.s10-b10 {
+  background: #17171a;
+}
+
+.s10-b15 {
+  background: #222226;
+}
+
+.s10-b20 {
+  background: #2e2e33;
+}
+
+.s10-b25 {
+  background: #393940;
+}
+
+.s10-b30 {
+  background: #45454d;
+}
+
+.s10-b35 {
+  background: #505059;
+}
+
+.s10-b40 {
+  background: #5c5c66;
+}
+
+.s10-b45 {
+  background: #676773;
+}
+
+.s10-b50 {
+  background: #737380;
+}
+
+.s10-b55 {
+  background: #7e7e8c;
+}
+
+.s10-b60 {
+  background: #8a8a99;
+}
+
+.s10-b65 {
+  background: #9595a6;
+}
+
+.s10-b70 {
+  background: #a1a1b3;
+}
+
+.s10-b75 {
+  background: #acacbf;
+}
+
+.s10-b80 {
+  background: #b8b8cc;
+}
+
+.s10-b85 {
+  background: #c3c3d9;
+}
+
+.s10-b90 {
+  background: #cfcfe6;
+}
+
+.s10-b95 {
+  background: #dadaf2;
+}
+
+.s10-b98 {
+  background: #e1e1fa;
+}
+
+.s10-b100 {
+  background: #e6e6ff;
+}
+
+.s15-b0 {
+  background: black;
+}
+
+.s15-b2 {
+  background: #040405;
+}
+
+.s15-b5 {
+  background: #0b0b0d;
+}
+
+.s15-b10 {
+  background: #16161a;
+}
+
+.s15-b15 {
+  background: #212126;
+}
+
+.s15-b20 {
+  background: #2b2b33;
+}
+
+.s15-b25 {
+  background: #363640;
+}
+
+.s15-b30 {
+  background: #41414d;
+}
+
+.s15-b35 {
+  background: #4c4c59;
+}
+
+.s15-b40 {
+  background: #575766;
+}
+
+.s15-b45 {
+  background: #626273;
+}
+
+.s15-b50 {
+  background: #6c6c80;
+}
+
+.s15-b55 {
+  background: #77778c;
+}
+
+.s15-b60 {
+  background: #828299;
+}
+
+.s15-b65 {
+  background: #8d8da6;
+}
+
+.s15-b70 {
+  background: #9898b3;
+}
+
+.s15-b75 {
+  background: #a3a3bf;
+}
+
+.s15-b80 {
+  background: #adadcc;
+}
+
+.s15-b85 {
+  background: #b8b8d9;
+}
+
+.s15-b90 {
+  background: #c3c3e6;
+}
+
+.s15-b95 {
+  background: #cecef2;
+}
+
+.s15-b98 {
+  background: #d4d4fa;
+}
+
+.s15-b100 {
+  background: #d9d9ff;
+}
+
+.s20-b0 {
+  background: black;
+}
+
+.s20-b2 {
+  background: #040405;
+}
+
+.s20-b5 {
+  background: #0a0a0d;
+}
+
+.s20-b10 {
+  background: #14141a;
+}
+
+.s20-b15 {
+  background: #1f1f26;
+}
+
+.s20-b20 {
+  background: #292933;
+}
+
+.s20-b25 {
+  background: #333340;
+}
+
+.s20-b30 {
+  background: #3d3d4d;
+}
+
+.s20-b35 {
+  background: #474759;
+}
+
+.s20-b40 {
+  background: #525266;
+}
+
+.s20-b45 {
+  background: #5c5c73;
+}
+
+.s20-b50 {
+  background: #666680;
+}
+
+.s20-b55 {
+  background: #70708c;
+}
+
+.s20-b60 {
+  background: #7a7a99;
+}
+
+.s20-b65 {
+  background: #8585a6;
+}
+
+.s20-b70 {
+  background: #8f8fb3;
+}
+
+.s20-b75 {
+  background: #9999bf;
+}
+
+.s20-b80 {
+  background: #a3a3cc;
+}
+
+.s20-b85 {
+  background: #adadd9;
+}
+
+.s20-b90 {
+  background: #b8b8e6;
+}
+
+.s20-b95 {
+  background: #c2c2f2;
+}
+
+.s20-b98 {
+  background: #c8c8fa;
+}
+
+.s20-b100 {
+  background: #ccccff;
+}
+
+.s25-b0 {
+  background: black;
+}
+
+.s25-b2 {
+  background: #040405;
+}
+
+.s25-b5 {
+  background: #0a0a0d;
+}
+
+.s25-b10 {
+  background: #13131a;
+}
+
+.s25-b15 {
+  background: #1d1d26;
+}
+
+.s25-b20 {
+  background: #262633;
+}
+
+.s25-b25 {
+  background: #303040;
+}
+
+.s25-b30 {
+  background: #39394d;
+}
+
+.s25-b35 {
+  background: #434359;
+}
+
+.s25-b40 {
+  background: #4d4d66;
+}
+
+.s25-b45 {
+  background: #565673;
+}
+
+.s25-b50 {
+  background: #606080;
+}
+
+.s25-b55 {
+  background: #69698c;
+}
+
+.s25-b60 {
+  background: #737399;
+}
+
+.s25-b65 {
+  background: #7c7ca6;
+}
+
+.s25-b70 {
+  background: #8686b3;
+}
+
+.s25-b75 {
+  background: #8f8fbf;
+}
+
+.s25-b80 {
+  background: #9999cc;
+}
+
+.s25-b85 {
+  background: #a3a3d9;
+}
+
+.s25-b90 {
+  background: #acace6;
+}
+
+.s25-b95 {
+  background: #b6b6f2;
+}
+
+.s25-b98 {
+  background: #bbbbfa;
+}
+
+.s25-b100 {
+  background: #bfbfff;
+}
+
+.s30-b0 {
+  background: black;
+}
+
+.s30-b2 {
+  background: #040405;
+}
+
+.s30-b5 {
+  background: #09090d;
+}
+
+.s30-b10 {
+  background: #12121a;
+}
+
+.s30-b15 {
+  background: #1b1b26;
+}
+
+.s30-b20 {
+  background: #242433;
+}
+
+.s30-b25 {
+  background: #2d2d40;
+}
+
+.s30-b30 {
+  background: #36364d;
+}
+
+.s30-b35 {
+  background: #3e3e59;
+}
+
+.s30-b40 {
+  background: #474766;
+}
+
+.s30-b45 {
+  background: #505073;
+}
+
+.s30-b50 {
+  background: #595980;
+}
+
+.s30-b55 {
+  background: #62628c;
+}
+
+.s30-b60 {
+  background: #6b6b99;
+}
+
+.s30-b65 {
+  background: #7474a6;
+}
+
+.s30-b70 {
+  background: #7d7db3;
+}
+
+.s30-b75 {
+  background: #8686bf;
+}
+
+.s30-b80 {
+  background: #8f8fcc;
+}
+
+.s30-b85 {
+  background: #9898d9;
+}
+
+.s30-b90 {
+  background: #a1a1e6;
+}
+
+.s30-b95 {
+  background: #aaaaf2;
+}
+
+.s30-b98 {
+  background: #afaffa;
+}
+
+.s30-b100 {
+  background: #b3b3ff;
+}
+
+.s35-b0 {
+  background: black;
+}
+
+.s35-b2 {
+  background: #030305;
+}
+
+.s35-b5 {
+  background: #08080d;
+}
+
+.s35-b10 {
+  background: #11111a;
+}
+
+.s35-b15 {
+  background: #191926;
+}
+
+.s35-b20 {
+  background: #212133;
+}
+
+.s35-b25 {
+  background: #292940;
+}
+
+.s35-b30 {
+  background: #32324d;
+}
+
+.s35-b35 {
+  background: #3a3a59;
+}
+
+.s35-b40 {
+  background: #424266;
+}
+
+.s35-b45 {
+  background: #4b4b73;
+}
+
+.s35-b50 {
+  background: #535380;
+}
+
+.s35-b55 {
+  background: #5b5b8c;
+}
+
+.s35-b60 {
+  background: #636399;
+}
+
+.s35-b65 {
+  background: #6c6ca6;
+}
+
+.s35-b70 {
+  background: #7474b3;
+}
+
+.s35-b75 {
+  background: #7c7cbf;
+}
+
+.s35-b80 {
+  background: #8585cc;
+}
+
+.s35-b85 {
+  background: #8d8dd9;
+}
+
+.s35-b90 {
+  background: #9595e6;
+}
+
+.s35-b95 {
+  background: #9d9df2;
+}
+
+.s35-b98 {
+  background: #a2a2fa;
+}
+
+.s35-b100 {
+  background: #a6a6ff;
+}
+
+.s40-b0 {
+  background: black;
+}
+
+.s40-b2 {
+  background: #030305;
+}
+
+.s40-b5 {
+  background: #08080d;
+}
+
+.s40-b10 {
+  background: #0f0f1a;
+}
+
+.s40-b15 {
+  background: #171726;
+}
+
+.s40-b20 {
+  background: #1f1f33;
+}
+
+.s40-b25 {
+  background: #262640;
+}
+
+.s40-b30 {
+  background: #2e2e4d;
+}
+
+.s40-b35 {
+  background: #363659;
+}
+
+.s40-b40 {
+  background: #3d3d66;
+}
+
+.s40-b45 {
+  background: #454573;
+}
+
+.s40-b50 {
+  background: #4d4d80;
+}
+
+.s40-b55 {
+  background: #54548c;
+}
+
+.s40-b60 {
+  background: #5c5c99;
+}
+
+.s40-b65 {
+  background: #6363a6;
+}
+
+.s40-b70 {
+  background: #6b6bb3;
+}
+
+.s40-b75 {
+  background: #7373bf;
+}
+
+.s40-b80 {
+  background: #7a7acc;
+}
+
+.s40-b85 {
+  background: #8282d9;
+}
+
+.s40-b90 {
+  background: #8a8ae6;
+}
+
+.s40-b95 {
+  background: #9191f2;
+}
+
+.s40-b98 {
+  background: #9696fa;
+}
+
+.s40-b100 {
+  background: #9999ff;
+}
+
+.s45-b0 {
+  background: black;
+}
+
+.s45-b2 {
+  background: #030305;
+}
+
+.s45-b5 {
+  background: #07070d;
+}
+
+.s45-b10 {
+  background: #0e0e1a;
+}
+
+.s45-b15 {
+  background: #151526;
+}
+
+.s45-b20 {
+  background: #1c1c33;
+}
+
+.s45-b25 {
+  background: #232340;
+}
+
+.s45-b30 {
+  background: #2a2a4d;
+}
+
+.s45-b35 {
+  background: #313159;
+}
+
+.s45-b40 {
+  background: #383866;
+}
+
+.s45-b45 {
+  background: #3f3f73;
+}
+
+.s45-b50 {
+  background: #464680;
+}
+
+.s45-b55 {
+  background: #4d4d8c;
+}
+
+.s45-b60 {
+  background: #545499;
+}
+
+.s45-b65 {
+  background: #5b5ba6;
+}
+
+.s45-b70 {
+  background: #6262b3;
+}
+
+.s45-b75 {
+  background: #6969bf;
+}
+
+.s45-b80 {
+  background: #7070cc;
+}
+
+.s45-b85 {
+  background: #7777d9;
+}
+
+.s45-b90 {
+  background: #7e7ee6;
+}
+
+.s45-b95 {
+  background: #8585f2;
+}
+
+.s45-b98 {
+  background: #8989fa;
+}
+
+.s45-b100 {
+  background: #8c8cff;
+}
+
+.s50-b0 {
+  background: black;
+}
+
+.s50-b2 {
+  background: #030305;
+}
+
+.s50-b5 {
+  background: #06060d;
+}
+
+.s50-b10 {
+  background: #0d0d1a;
+}
+
+.s50-b15 {
+  background: #131326;
+}
+
+.s50-b20 {
+  background: #1a1a33;
+}
+
+.s50-b25 {
+  background: #202040;
+}
+
+.s50-b30 {
+  background: #26264d;
+}
+
+.s50-b35 {
+  background: #2d2d59;
+}
+
+.s50-b40 {
+  background: #333366;
+}
+
+.s50-b45 {
+  background: #393973;
+}
+
+.s50-b50 {
+  background: #404080;
+}
+
+.s50-b55 {
+  background: #46468c;
+}
+
+.s50-b60 {
+  background: #4d4d99;
+}
+
+.s50-b65 {
+  background: #5353a6;
+}
+
+.s50-b70 {
+  background: #5959b3;
+}
+
+.s50-b75 {
+  background: #6060bf;
+}
+
+.s50-b80 {
+  background: #6666cc;
+}
+
+.s50-b85 {
+  background: #6c6cd9;
+}
+
+.s50-b90 {
+  background: #7373e6;
+}
+
+.s50-b95 {
+  background: #7979f2;
+}
+
+.s50-b98 {
+  background: #7d7dfa;
+}
+
+.s50-b100 {
+  background: #8080ff;
+}
+
+.s55-b0 {
+  background: black;
+}
+
+.s55-b2 {
+  background: #020205;
+}
+
+.s55-b5 {
+  background: #06060d;
+}
+
+.s55-b10 {
+  background: #0b0b1a;
+}
+
+.s55-b15 {
+  background: #111126;
+}
+
+.s55-b20 {
+  background: #171733;
+}
+
+.s55-b25 {
+  background: #1d1d40;
+}
+
+.s55-b30 {
+  background: #22224d;
+}
+
+.s55-b35 {
+  background: #282859;
+}
+
+.s55-b40 {
+  background: #2e2e66;
+}
+
+.s55-b45 {
+  background: #343473;
+}
+
+.s55-b50 {
+  background: #393980;
+}
+
+.s55-b55 {
+  background: #3f3f8c;
+}
+
+.s55-b60 {
+  background: #454599;
+}
+
+.s55-b65 {
+  background: #4b4ba6;
+}
+
+.s55-b70 {
+  background: #5050b3;
+}
+
+.s55-b75 {
+  background: #5656bf;
+}
+
+.s55-b80 {
+  background: #5c5ccc;
+}
+
+.s55-b85 {
+  background: #6262d9;
+}
+
+.s55-b90 {
+  background: #6767e6;
+}
+
+.s55-b95 {
+  background: #6d6df2;
+}
+
+.s55-b98 {
+  background: #7070fa;
+}
+
+.s55-b100 {
+  background: #7373ff;
+}
+
+.s60-b0 {
+  background: black;
+}
+
+.s60-b2 {
+  background: #020205;
+}
+
+.s60-b5 {
+  background: #05050d;
+}
+
+.s60-b10 {
+  background: #0a0a1a;
+}
+
+.s60-b15 {
+  background: #0f0f26;
+}
+
+.s60-b20 {
+  background: #141433;
+}
+
+.s60-b25 {
+  background: #1a1a40;
+}
+
+.s60-b30 {
+  background: #1f1f4d;
+}
+
+.s60-b35 {
+  background: #242459;
+}
+
+.s60-b40 {
+  background: #292966;
+}
+
+.s60-b45 {
+  background: #2e2e73;
+}
+
+.s60-b50 {
+  background: #333380;
+}
+
+.s60-b55 {
+  background: #38388c;
+}
+
+.s60-b60 {
+  background: #3d3d99;
+}
+
+.s60-b65 {
+  background: #4242a6;
+}
+
+.s60-b70 {
+  background: #4747b3;
+}
+
+.s60-b75 {
+  background: #4d4dbf;
+}
+
+.s60-b80 {
+  background: #5252cc;
+}
+
+.s60-b85 {
+  background: #5757d9;
+}
+
+.s60-b90 {
+  background: #5c5ce6;
+}
+
+.s60-b95 {
+  background: #6161f2;
+}
+
+.s60-b98 {
+  background: #6464fa;
+}
+
+.s60-b100 {
+  background: #6666ff;
+}
+
+.s65-b0 {
+  background: black;
+}
+
+.s65-b2 {
+  background: #020205;
+}
+
+.s65-b5 {
+  background: #04040d;
+}
+
+.s65-b10 {
+  background: #09091a;
+}
+
+.s65-b15 {
+  background: #0d0d26;
+}
+
+.s65-b20 {
+  background: #121233;
+}
+
+.s65-b25 {
+  background: #161640;
+}
+
+.s65-b30 {
+  background: #1b1b4d;
+}
+
+.s65-b35 {
+  background: #1f1f59;
+}
+
+.s65-b40 {
+  background: #242466;
+}
+
+.s65-b45 {
+  background: #282873;
+}
+
+.s65-b50 {
+  background: #2d2d80;
+}
+
+.s65-b55 {
+  background: #31318c;
+}
+
+.s65-b60 {
+  background: #363699;
+}
+
+.s65-b65 {
+  background: #3a3aa6;
+}
+
+.s65-b70 {
+  background: #3e3eb3;
+}
+
+.s65-b75 {
+  background: #4343bf;
+}
+
+.s65-b80 {
+  background: #4747cc;
+}
+
+.s65-b85 {
+  background: #4c4cd9;
+}
+
+.s65-b90 {
+  background: #5050e6;
+}
+
+.s65-b95 {
+  background: #5555f2;
+}
+
+.s65-b98 {
+  background: #5757fa;
+}
+
+.s65-b100 {
+  background: #5959ff;
+}
+
+.s70-b0 {
+  background: black;
+}
+
+.s70-b2 {
+  background: #020205;
+}
+
+.s70-b5 {
+  background: #04040d;
+}
+
+.s70-b10 {
+  background: #08081a;
+}
+
+.s70-b15 {
+  background: #0b0b26;
+}
+
+.s70-b20 {
+  background: #0f0f33;
+}
+
+.s70-b25 {
+  background: #131340;
+}
+
+.s70-b30 {
+  background: #17174d;
+}
+
+.s70-b35 {
+  background: #1b1b59;
+}
+
+.s70-b40 {
+  background: #1f1f66;
+}
+
+.s70-b45 {
+  background: #222273;
+}
+
+.s70-b50 {
+  background: #262680;
+}
+
+.s70-b55 {
+  background: #2a2a8c;
+}
+
+.s70-b60 {
+  background: #2e2e99;
+}
+
+.s70-b65 {
+  background: #3232a6;
+}
+
+.s70-b70 {
+  background: #3636b3;
+}
+
+.s70-b75 {
+  background: #3939bf;
+}
+
+.s70-b80 {
+  background: #3d3dcc;
+}
+
+.s70-b85 {
+  background: #4141d9;
+}
+
+.s70-b90 {
+  background: #4545e6;
+}
+
+.s70-b95 {
+  background: #4949f2;
+}
+
+.s70-b98 {
+  background: #4b4bfa;
+}
+
+.s70-b100 {
+  background: #4d4dff;
+}
+
+.s75-b0 {
+  background: black;
+}
+
+.s75-b2 {
+  background: #010105;
+}
+
+.s75-b5 {
+  background: #03030d;
+}
+
+.s75-b10 {
+  background: #06061a;
+}
+
+.s75-b15 {
+  background: #0a0a26;
+}
+
+.s75-b20 {
+  background: #0d0d33;
+}
+
+.s75-b25 {
+  background: #101040;
+}
+
+.s75-b30 {
+  background: #13134d;
+}
+
+.s75-b35 {
+  background: #161659;
+}
+
+.s75-b40 {
+  background: #1a1a66;
+}
+
+.s75-b45 {
+  background: #1d1d73;
+}
+
+.s75-b50 {
+  background: #202080;
+}
+
+.s75-b55 {
+  background: #23238c;
+}
+
+.s75-b60 {
+  background: #262699;
+}
+
+.s75-b65 {
+  background: #2929a6;
+}
+
+.s75-b70 {
+  background: #2d2db3;
+}
+
+.s75-b75 {
+  background: #3030bf;
+}
+
+.s75-b80 {
+  background: #3333cc;
+}
+
+.s75-b85 {
+  background: #3636d9;
+}
+
+.s75-b90 {
+  background: #3939e6;
+}
+
+.s75-b95 {
+  background: #3d3df2;
+}
+
+.s75-b98 {
+  background: #3e3efa;
+}
+
+.s75-b100 {
+  background: #4040ff;
+}
+
+.s80-b0 {
+  background: black;
+}
+
+.s80-b2 {
+  background: #010105;
+}
+
+.s80-b5 {
+  background: #03030d;
+}
+
+.s80-b10 {
+  background: #05051a;
+}
+
+.s80-b15 {
+  background: #080826;
+}
+
+.s80-b20 {
+  background: #0a0a33;
+}
+
+.s80-b25 {
+  background: #0d0d40;
+}
+
+.s80-b30 {
+  background: #0f0f4d;
+}
+
+.s80-b35 {
+  background: #121259;
+}
+
+.s80-b40 {
+  background: #141466;
+}
+
+.s80-b45 {
+  background: #171773;
+}
+
+.s80-b50 {
+  background: #1a1a80;
+}
+
+.s80-b55 {
+  background: #1c1c8c;
+}
+
+.s80-b60 {
+  background: #1f1f99;
+}
+
+.s80-b65 {
+  background: #2121a6;
+}
+
+.s80-b70 {
+  background: #2424b3;
+}
+
+.s80-b75 {
+  background: #2626bf;
+}
+
+.s80-b80 {
+  background: #2929cc;
+}
+
+.s80-b85 {
+  background: #2b2bd9;
+}
+
+.s80-b90 {
+  background: #2e2ee6;
+}
+
+.s80-b95 {
+  background: #3030f2;
+}
+
+.s80-b98 {
+  background: #3232fa;
+}
+
+.s80-b100 {
+  background: #3333ff;
+}
+
+.s85-b0 {
+  background: black;
+}
+
+.s85-b2 {
+  background: #010105;
+}
+
+.s85-b5 {
+  background: #02020d;
+}
+
+.s85-b10 {
+  background: #04041a;
+}
+
+.s85-b15 {
+  background: #060626;
+}
+
+.s85-b20 {
+  background: #080833;
+}
+
+.s85-b25 {
+  background: #0a0a40;
+}
+
+.s85-b30 {
+  background: #0b0b4d;
+}
+
+.s85-b35 {
+  background: #0d0d59;
+}
+
+.s85-b40 {
+  background: #0f0f66;
+}
+
+.s85-b45 {
+  background: #111173;
+}
+
+.s85-b50 {
+  background: #131380;
+}
+
+.s85-b55 {
+  background: #15158c;
+}
+
+.s85-b60 {
+  background: #171799;
+}
+
+.s85-b65 {
+  background: #1919a6;
+}
+
+.s85-b70 {
+  background: #1b1bb3;
+}
+
+.s85-b75 {
+  background: #1d1dbf;
+}
+
+.s85-b80 {
+  background: #1f1fcc;
+}
+
+.s85-b85 {
+  background: #2121d9;
+}
+
+.s85-b90 {
+  background: #2222e6;
+}
+
+.s85-b95 {
+  background: #2424f2;
+}
+
+.s85-b98 {
+  background: #2525fa;
+}
+
+.s85-b100 {
+  background: #2626ff;
+}
+
+.s90-b0 {
+  background: black;
+}
+
+.s90-b2 {
+  background: #010105;
+}
+
+.s90-b5 {
+  background: #01010d;
+}
+
+.s90-b10 {
+  background: #03031a;
+}
+
+.s90-b15 {
+  background: #040426;
+}
+
+.s90-b20 {
+  background: #050533;
+}
+
+.s90-b25 {
+  background: #060640;
+}
+
+.s90-b30 {
+  background: #08084d;
+}
+
+.s90-b35 {
+  background: #090959;
+}
+
+.s90-b40 {
+  background: #0a0a66;
+}
+
+.s90-b45 {
+  background: #0b0b73;
+}
+
+.s90-b50 {
+  background: #0d0d80;
+}
+
+.s90-b55 {
+  background: #0e0e8c;
+}
+
+.s90-b60 {
+  background: #0f0f99;
+}
+
+.s90-b65 {
+  background: #1111a6;
+}
+
+.s90-b70 {
+  background: #1212b3;
+}
+
+.s90-b75 {
+  background: #1313bf;
+}
+
+.s90-b80 {
+  background: #1414cc;
+}
+
+.s90-b85 {
+  background: #1616d9;
+}
+
+.s90-b90 {
+  background: #1717e6;
+}
+
+.s90-b95 {
+  background: #1818f2;
+}
+
+.s90-b98 {
+  background: #1919fa;
+}
+
+.s90-b100 {
+  background: #1a1aff;
+}
+
+.s95-b0 {
+  background: black;
+}
+
+.s95-b2 {
+  background: #000005;
+}
+
+.s95-b5 {
+  background: #01010d;
+}
+
+.s95-b10 {
+  background: #01011a;
+}
+
+.s95-b15 {
+  background: #020226;
+}
+
+.s95-b20 {
+  background: #030333;
+}
+
+.s95-b25 {
+  background: #030340;
+}
+
+.s95-b30 {
+  background: #04044d;
+}
+
+.s95-b35 {
+  background: #040459;
+}
+
+.s95-b40 {
+  background: #050566;
+}
+
+.s95-b45 {
+  background: #060673;
+}
+
+.s95-b50 {
+  background: #060680;
+}
+
+.s95-b55 {
+  background: #07078c;
+}
+
+.s95-b60 {
+  background: #080899;
+}
+
+.s95-b65 {
+  background: #0808a6;
+}
+
+.s95-b70 {
+  background: #0909b3;
+}
+
+.s95-b75 {
+  background: #0a0abf;
+}
+
+.s95-b80 {
+  background: #0a0acc;
+}
+
+.s95-b85 {
+  background: #0b0bd9;
+}
+
+.s95-b90 {
+  background: #0b0be6;
+}
+
+.s95-b95 {
+  background: #0c0cf2;
+}
+
+.s95-b98 {
+  background: #0c0cfa;
+}
+
+.s95-b100 {
+  background: #0d0dff;
+}
+
+.s98-b0 {
+  background: black;
+}
+
+.s98-b2 {
+  background: #000005;
+}
+
+.s98-b5 {
+  background: #00000d;
+}
+
+.s98-b10 {
+  background: #01011a;
+}
+
+.s98-b15 {
+  background: #010126;
+}
+
+.s98-b20 {
+  background: #010133;
+}
+
+.s98-b25 {
+  background: #010140;
+}
+
+.s98-b30 {
+  background: #02024d;
+}
+
+.s98-b35 {
+  background: #020259;
+}
+
+.s98-b40 {
+  background: #020266;
+}
+
+.s98-b45 {
+  background: #020273;
+}
+
+.s98-b50 {
+  background: #030380;
+}
+
+.s98-b55 {
+  background: #03038c;
+}
+
+.s98-b60 {
+  background: #030399;
+}
+
+.s98-b65 {
+  background: #0303a6;
+}
+
+.s98-b70 {
+  background: #0404b3;
+}
+
+.s98-b75 {
+  background: #0404bf;
+}
+
+.s98-b80 {
+  background: #0404cc;
+}
+
+.s98-b85 {
+  background: #0404d9;
+}
+
+.s98-b90 {
+  background: #0505e6;
+}
+
+.s98-b95 {
+  background: #0505f2;
+}
+
+.s98-b98 {
+  background: #0505fa;
+}
+
+.s98-b100 {
+  background: #0505ff;
+}
+
+.s100-b0 {
+  background: black;
+}
+
+.s100-b2 {
+  background: #000005;
+}
+
+.s100-b5 {
+  background: #00000d;
+}
+
+.s100-b10 {
+  background: #00001a;
+}
+
+.s100-b15 {
+  background: #000026;
+}
+
+.s100-b20 {
+  background: #000033;
+}
+
+.s100-b25 {
+  background: #000040;
+}
+
+.s100-b30 {
+  background: #00004d;
+}
+
+.s100-b35 {
+  background: #000059;
+}
+
+.s100-b40 {
+  background: #000066;
+}
+
+.s100-b45 {
+  background: #000073;
+}
+
+.s100-b50 {
+  background: navy;
+}
+
+.s100-b55 {
+  background: #00008c;
+}
+
+.s100-b60 {
+  background: #000099;
+}
+
+.s100-b65 {
+  background: #0000a6;
+}
+
+.s100-b70 {
+  background: #0000b3;
+}
+
+.s100-b75 {
+  background: #0000bf;
+}
+
+.s100-b80 {
+  background: #0000cc;
+}
+
+.s100-b85 {
+  background: #0000d9;
+}
+
+.s100-b90 {
+  background: #0000e6;
+}
+
+.s100-b95 {
+  background: #0000f2;
+}
+
+.s100-b98 {
+  background: #0000fa;
+}
+
+.s100-b100 {
+  background: blue;
+}

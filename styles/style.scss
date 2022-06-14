@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+// converts hsb value to hsl
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+  @if $b-hsb == 0 {
+    @return hsla(0, 0, 0, $a);
+  } @else {
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+    @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+  margin: 1rem auto;
+  background: hsb(240, 10, 20);
+}
+
+#display {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: hsb(240, 10, 80);
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.box {
+  width: 80px;
+  height: 80px;
+  border: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+
+  &:hover {
+    border: 2px solid white;
+    color: white;
+    transform: scale(1.2);
+  }
+}
+
+//creating css class dynamically for each hsb value
+
+$hue: 240;
+$saturation: 0 2 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 98 100;
+$brightness: 0 2 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 98 100;
+
+@each $s-value in $saturation {
+  @each $b-value in $brightness {
+    .s#{$s-value}-b#{$b-value} {
+      background: hsb($hue, $s-value, $b-value);
+      @extend .box;
+    }
+  }
+}
